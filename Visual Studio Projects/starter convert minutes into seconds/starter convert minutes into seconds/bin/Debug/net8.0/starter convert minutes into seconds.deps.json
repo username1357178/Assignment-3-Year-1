@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "starter convert minutes into seconds/1.0.0": {
+        "runtime": {
+          "starter convert minutes into seconds.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "starter convert minutes into seconds/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
