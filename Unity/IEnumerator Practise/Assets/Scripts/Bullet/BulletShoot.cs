@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Sockets;
 using System.Threading;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BulletShoot : MonoBehaviour
@@ -16,24 +18,14 @@ public class BulletShoot : MonoBehaviour
     private bool hit;
     private float lifetime;
 
+    public Rigidbody rocketPrefab;
+    public Transform barrelEnd;
+
+    bool canShoot = true;
+
     private void Awake()
     {
         boxCollider = GetComponent<BoxCollider2D>();
-    }
-    private void Update()
-    {
-        if (hit) return;
-        float movementSpeed = speed * Time.deltaTime * direction;
-        transform.Translate(movementSpeed, 0, 0);
-
-        lifetime += Time.deltaTime;
-        if (lifetime > 5) gameObject.SetActive(false);
-
-        if (Input.GetMouseButton(0) && cooldownTimer > 1
-            && Time.timeScale > 0)
-            Attack();
-
-        cooldownTimer += Time.deltaTime;
     }
 
     public void Attack()
@@ -73,4 +65,44 @@ public class BulletShoot : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (canShoot == false)
+            {
+                StartCoroutine("Loop");
+            }
+        }
+    }
+
+    IEnumerator Loop()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (canShoot == false)
+            {
+                Rigidbody rocketInstance;
+                rocketInstance = Instantiate(rocketPrefab, barrelEnd.position, barrelEnd.rotation) as Rigidbody;
+                rocketInstance.AddForce(barrelEnd.forward * 2000);
+
+                yield return new WaitForSeconds(1f);
+
+                canShoot = true;
+                Destroy(gameObject, 1.5f);
+            }
+        }
+    }
+
+
+    public class RocketDestruction : MonoBehaviour
+    {
+        void Start()
+        {
+            Destroy(gameObject, 1.5f);
+        }
+    }
+
 }
