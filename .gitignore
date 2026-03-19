@@ -1,86 +1,96 @@
+# =========================
 # Unity generated files
+# =========================
 [Ll]ibrary/
 [Tt]emp/
 obj/
 Build/
 Builds/
-# Ignore the build profile folder (e.g., the BuildSettings)
 BuildSettings/
+UnityCache/
+MemoryCaptures/
 
-# User-specific files
-.vscode/
-.idea/
-
-# OS generated files
-.DS_Store
-Thumbs.db
-
-# Unity package manager files (large caches and manifests)
+# Unity package manager files
 [Pp]ackages/manifest.json
 [Pp]ackages/PackageCache/
 
-# Unity's cache directory for assets
-UnityCache/
+# =========================
+# Unreal Engine generated files
+# =========================
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+Crashes/
+Autosaves/
+Thumbnails/
 
-# Log files
-*.log
+# Plugin build/cache files
+Plugins/*/Intermediate/*
+Plugins/*/Binaries/*
 
-# Windows Installer files
-*.cab
-*.msi
-*.msm
-*.msp
+# Unreal shader logs
+*.usf.log
+*.ush.log
 
-# macOS Finder folder attributes
-.AppleDouble
-.LSOverride
+# Unreal map built data
+*_BuiltData.uasset
 
-# Temporary files from Unity, Blender, and others
-*.swp
-*.swo
-
-# Blender's temporary files
-.blender/
-
-# Visual Studio Code settings files (shouldn’t be uploaded unless needed)
+# =========================
+# IDE / Editor files
+# =========================
 .vscode/
-
-# JetBrains IDE files (e.g., Rider, PhpStorm, etc.)
 .idea/
-
-# User-specific Visual Studio files
 .vs/
 .vs2019/
 .vs2017/
 
-# User-specific Visual Studio project files
-*.user
-*.userosscache
-*.suo
-*.userprefs
-
-# Unity-specific editor settings (won't affect gameplay, just project settings)
+# Visual Studio generated files
 *.csproj
 *.sln
 *.suo
+*.user
+*.userosscache
+*.userprefs
+*.rsuser
+*.sln.docstates
+
+# C++ database/cache
+*.VC.db
+*.opendb
+*.opensdf
+*.sdf
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# Temporary files
+# =========================
 *.tmp
+*.temp
+*.swp
+*.swo
+*.bak
 
-# Rider specific files (for users of JetBrains Rider)
-.idea/
+# Blender temp
+.blender/
 
-# MacOS specific files
+# =========================
+# OS generated files
+# =========================
+.DS_Store
 .AppleDouble
 .LSOverride
+Thumbs.db
+Desktop.ini
 
-# Windows Installer files
+# =========================
+# Windows installer files
+# =========================
 *.cab
 *.msi
 *.msm
 *.msp
-
-# Ignore directories related to build systems
-[Bb]uild/
-[Bb]uilds/
-
-# Additional Unity cache, generated files, or directories
-MemoryCaptures/
